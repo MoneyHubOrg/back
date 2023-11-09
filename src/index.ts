@@ -8,6 +8,7 @@ import { conn } from './config/db';
 import { UserConta } from './entities/userConta';
 import { Financa } from './entities/financas';
 import { Categoria } from './entities/categoria';
+import routes from './routes';
 
 dotenv.config();
 
@@ -19,6 +20,8 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(routes);
+
 
 
 (async () => {
